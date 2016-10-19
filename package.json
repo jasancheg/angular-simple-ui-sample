@@ -1,0 +1,11 @@
+{
+  "name": "woon-test",
+  "version": "0.0.1",
+  "description": "Simple app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Toni - Jose Antio Sanchez <jasancheg@gmail.com> (http://www.inideaweb.com/)",
+  "license": "ISC"
+}

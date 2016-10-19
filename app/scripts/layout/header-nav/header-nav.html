@@ -1,0 +1,37 @@
+<header class="header animated fadeIn">
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button"
+                ng-if="vm.isAuth"
+                aria-expanded="false"
+                data-toggle="collapse"
+                class="navbar-toggle collapsed"
+                data-target="#bs-navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Simple App</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div id="bs-navbar-collapse"
+           class="collapse navbar-collapse">
+
+        <ul class="nav navbar-nav">
+
+          <li class="dropdown">
+            <a href="javascrip:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">News <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a ui-sref="news.list">List</a></li>
+              <li><a ui-sref="news.add">Add</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
