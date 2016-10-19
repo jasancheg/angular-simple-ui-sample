@@ -17,9 +17,10 @@
     }
 
     /* @ngInject */
-    // function GetNews (api) {
-    //   return api.get('/user');
-    // }
+    function getNews(api) {
+      var url = 'content/render/false/type/json/query/+contentType:News%20+(conhost:48190c8c-42c4-46af-8d1a-0cd5db894797%20conhost:SYSTEM_HOST)%20+languageId:1%20+deleted:false%20+working:true/orderby/News.sysPublishDate%20desc';
+      return api.get(url);
+    }
 
     function getStates() {
       return [
@@ -48,10 +49,10 @@
             templateUrl: 'scripts/components/news/list-news/list-news.html',
             controller: 'NewsListCtrl',
             controllerAs: 'vm',
-            title: 'News list'
-            // resolve: {
-            //   NewsList: GetNews
-            // }
+            title: 'News list',
+            resolve: {
+              NewsList: getNews
+            }
           }
         }
       ];

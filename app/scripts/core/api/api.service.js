@@ -6,12 +6,12 @@
     .factory('api', api);
 
   /* @ngInject */
-  function api($q, $http, API_URL, $httpParamSerializer, logger) {
+  function api($q, $http, API_URL, $httpParamSerializer, $log) {
 
-    var basePath = API_URL + 'api';
+    var basePath = API_URL;
 
     function makeRequest(verb, uri, data) {
-      logger.log('api :: ' + verb + ' :: ' + uri, data);
+      $log.log('api :: ' + verb + ' :: ' + uri, data);
       var defer = $q.defer();
       verb = verb.toLowerCase();
 

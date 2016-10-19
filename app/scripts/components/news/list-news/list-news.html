@@ -1,3 +1,94 @@
 <div class="container list-news-view">
-  List news
+  <div class="row">
+    <div class="col-md-12 col-lg-12">
+      <h3>
+        <span class="label label-primary"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span></span>
+        List News
+      </h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+      <br>&nbsp;
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+      <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">
+          <span class="glyphicon glyphicon-filter"></span>
+          <span class="badge">{{vm.contentlets.length || 0}}</span>
+          <strong>News</strong>&nbsp;
+
+          <div class="items-per-page-input pull-right">
+            <input class="form-control input-sm div-itemperpage" type="text" value="{{vm.itemsPerPage}}" readonly>
+          </div>
+          <div class="dropdown items-per-page-dropdown pull-right">
+            <button class="dropdown-toggle btn-default btn btn-xs" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Items per page
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li>
+                <a href="javascript:void(0)" ng-click="vm.setItemsPerPage(2)"><span>2</span></a>
+              </li>
+              <li>
+                <a href="javascript:void(0)" ng-click="vm.setItemsPerPage(5)"><span>5</span></a>
+              </li>
+              <li>
+                <a href="javascript:void(0)" ng-click="vm.setItemsPerPage(8)"><span>8</span></a>
+              </li>
+              <li>
+                <a href="javascript:void(0)" ng-click="vm.setItemsPerPage(12)"><span>12</span></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="panel-body">
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>tab 1</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr ng-repeat="news in vm.contentlets" >
+                    <td class="animate-repeat">
+                      {{ news }}
+                    </td>
+                  </tr>
+                  <tr ng-if="vm.contentlets.length === 0">
+                    <td colspan="24">
+                      No results found.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer foot-pagination text-center">
+          <nav g-if="vm.pages >= 2">
+            <ul class="pagination">
+              <li><a ng-click="vm.selectPage(1)">First</a></li>
+              <li><a ng-click="vm.selectPage(vm.currentPage - 1)">&lt;</a></li>
+              <li>
+                <span>
+                  <input type="text"
+                         ng-model="vm.currentPage"
+                         ng-change="vm.selectPage(vm.currentPage)"> of {{vm.pages}}
+                </span>
+              </li>
+              <li><a ng-click="vm.selectPage(vm.currentPage + 1)">&gt;</a></li>
+              <li><a ng-click="vm.selectPage(vm.pages)">Last</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

@@ -57,7 +57,7 @@
             handlingStateChangeError = true;
             var msg = formatErrorMessage(error);
             $log.warn(msg, [toState]);
-            $state.go('user.dashboard');
+            $state.go('news.list');
 
             function formatErrorMessage(error) {
               var dest = (toState && (toState.title || toState.name ||
