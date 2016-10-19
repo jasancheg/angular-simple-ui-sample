@@ -49,7 +49,7 @@
         // On routing error, go to the dashboard.
         // Provide an exit clause if it tries to do it twice.
         $rootScope.$on('$stateChangeError',
-          function(event, toState, toParams, fromState, fromParams, error) {
+          function(event, toState, toParams, fromState, fromParams, error, toastr) {
             if (handlingStateChangeError) {
               return;
             }
@@ -57,6 +57,7 @@
             handlingStateChangeError = true;
             var msg = formatErrorMessage(error);
             $log.warn(msg, [toState]);
+            toastr.error('some message', 'Routing error');
             $state.go('news.list');
 
             function formatErrorMessage(error) {

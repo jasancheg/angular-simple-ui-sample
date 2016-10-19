@@ -47,6 +47,7 @@
       getNews()
         .then(function(res){
           vm.contentlets = res.contentlets;
+           toastr.success('some message', 'List updated');
           console.log("list updated", {list: vm.contentlets})
         });
     }
